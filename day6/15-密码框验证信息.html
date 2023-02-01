@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+            border: 1px solid blue;
+        }
+
+        span {
+            display: none;
+            font-size: 14px;
+            color: #ccc;
+            vertical-align: middle;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="password">
+        <span id="wrong">
+            <img src="wrong.png" alt="">
+            请输入大于6位的密码
+        </span>
+        <script>
+            var input = document.querySelector('input');
+            var w = document.getElementById('wrong');
+            input.onblur = function () {
+                if (input.value.length < 6) {
+                    w.style.display = 'inline-block';
+                }
+                else {
+                    w.style.display = 'none';
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

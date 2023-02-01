@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>弹窗</li>
+        <li>弹窗</li>
+        <li>弹窗</li>
+        <li>弹窗</li>
+        <li>弹窗</li>
+    </ul>
+    <!-- 事件委托原理：不用给每个子节点绑定事件 给父节点绑定事件 利用事件冒泡影响每一个子节点
+     -->
+    <script>
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // alert('弹出');
+            //通过e.target获取触发的对象
+            e.target.style.backgroundColor = 'pink';
+        })
+    </script>
+</body>
+
+</html>

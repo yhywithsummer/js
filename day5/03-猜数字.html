@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var res = Math.floor(Math.random() * 10 + 1);
+        var ans = prompt('请输入一个1-10之间的数字');
+        while (ans != res) {
+            ans = res > ans ? prompt('猜错啦 请大一点') : prompt('猜错啦 请小一点');
+        }
+        alert('猜对啦 答案是' + res);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

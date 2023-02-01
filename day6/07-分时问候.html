@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="greet"></div>
+    <img src="" alt="" id="pic">
+    <script>
+        var pic = document.getElementById('pic');
+        var greet = document.getElementById('greet');
+        var dt = new Date();
+        var h = dt.getHours();
+        console.log(h);
+        if (h < 12) {
+            greet.innerHTML = '早上好';
+            pic.src = 'z.gif';
+        }
+        else if (h < 18) {
+            greet.innerHTML = '下午好';
+            pic.src = 'x.gif';
+        }
+        else {
+            greet.innerHTML = '晚上好';
+            pic.src = 'w.gif';
+        }
+    </script>
+</body>
+
+</html>

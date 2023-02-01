@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 利用节点层级关系获取元素 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">x</span>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        console.dir(box);
+        /*
+        元素节点nodeType为1  主要
+        属性节点nodeType为2
+        文本节点nodeType为3（文字、空格、换行）
+        nodeName: "DIV"
+        nodeType: 1
+        nodeValue: null
+        */
+        //父节点 parentNode
+        var erweima = document.querySelector('.erweima');
+        //    var box = document.querySelector('.box');
+        //得到的是最近的父级节点 如果找不到返回null
+        console.log(erweima.parentNode);
+        var ul = document.querySelector('ul');
+        // var li = ul.querySelectorAll('li')
+
+        
+        // 子节点 不推荐
+        console.log(ul.childNodes);//啥都获取了
+        console.log(ul.childNodes[0].nodeType);
+
+
+        //children 获取所有子元素 最常用
+        console.log(ul.children);
+
+
+        //第一个子节点 firstChild 不管是文本还是元素节点
+        console.log(ul.firstChild);
+        //最后一个子节点 lastChild 同上
+
+        //第一个元素节点 firstElementChild 获取第一个元素节点
+        console.log(ul.firstElementChild);
+        //最后一个子元素节点 lastElementChild
+
+        //3.实际开发 没有兼容性问题
+        console.log(ul.children[0]);
+
+    </script>
+</body>
+
+</html>

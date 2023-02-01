@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">显示时间</button>
+    <div id="tm">time</div>
+    <p>123</p>
+    <script>
+        function showDate() {
+            var date = new Date();
+            var dt, weekday, t;
+            t = date.getDay();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+            weekday = arr[t];
+            var h = date.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            dt = date.getFullYear() + '年 ' + (date.getMonth() + 1) + '月 ' + date.getDate() + '日 ' + weekday + ' ' + h + ':' + m + ':' + s;
+            return dt;
+        }
+        var btn = document.getElementById('btn');
+        var tm = document.getElementById('tm');
+        btn.onclick = function () {
+            tm.innerText = showDate();
+        }
+        //我们元素可以不用添加事件 不用操作世界执行
+        var p = document.querySelector('p');
+        p.innerText = showDate();
+    </script>
+</body>
+
+</html>

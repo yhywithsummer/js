@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+            height: 300px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="bt1">ldh</button>
+    <button id="zxy">zxy</button>
+    <br>
+    <img src="ldh.jpg" alt="" id="img">
+    <script>
+        var ldh = document.getElementById('bt1');
+        var zxy = document.getElementById('zxy');
+        var im = document.getElementById('img');
+        ldh.onclick = function () {
+            im.src = 'ldh.jpg';
+        }
+        zxy.onclick = function () {
+            im.src = 'zxy.jpg';
+        }
+    </script>
+</body>
+
+</html>

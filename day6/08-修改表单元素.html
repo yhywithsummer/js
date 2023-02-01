@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <input type="text" value="输入内容" id="form">
+    <script>
+        var btn = document.getElementById('btn');
+        var form = document.getElementById('form');
+        btn.onclick = function () {
+            //form.innerHTML = '666';
+            form.value = '666';//表单中的数据通过value来修改
+            alert(form.value);
+            //如果想要某个表单被禁用 不能再点击 disabled
+            //btn.disabled = true;
+            this.disabled = true;
+            //this指向的是事件函数的调用者
+        }
+    </script>
+</body>
+
+</html>

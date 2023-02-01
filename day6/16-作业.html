@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #ccc;
+        }
+
+        #box1 {
+            position: relative;
+            width: 100px;
+            height: 30px;
+            background-color: pink;
+            margin: 20px auto;
+        }
+
+        #box2 {
+            display: none;
+            position: absolute;
+            top: 30px;
+            width: 100px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="请输入名字">
+    <script>
+        var input = document.querySelector('input');
+        input.onfocus = function () {
+            if (this.value == '请输入名字') {
+                this.value = '';
+                input.style.color = '#333'
+            }
+        }
+        input.onblur = function () {
+            input.style.color = '#ccc';
+            if (this.value == '') {
+                this.value = '请输入名字';
+            }
+        }
+    </script>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var blank = document.querySelector('body');
+        box1.onmousemove = function () {
+            box2.style.display = 'block';
+        }
+        window.onclick = function () {
+            box2.style.display = 'none';
+        }
+    </script>
+    <button>开灯</button>
+    <script>
+        var btn = document.querySelector('button');
+        var bd = document.querySelector('body')
+        btn.onclick = function () {
+            if (btn.innerHTML == '开灯') {
+                bd.style.backgroundColor = '#fff';
+                btn.innerHTML = '关灯'
+            }
+            else {
+                bd.style.backgroundColor = 'black';
+                btn.innerHTML = '开灯'
+            }
+        }
+    </script>
+</body>
+
+</html>

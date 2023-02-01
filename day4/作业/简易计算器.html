@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Calculate(a, b) {
+            this.add = function (a, b) {
+                return a - (-b);
+            }
+            this.minus = function (a, b) {
+                return a - b;
+            }
+            this.mult = function (a, b) {
+                return a * b;
+            }
+            this.div = function (a, b) {
+                return a / b;
+            }
+        }
+        var a, b;
+        var ans = new Calculate(a, b);
+        while (true) {
+            var input = prompt('1.加法运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出\n请输入您的选项');
+            if (input == '5') break;
+            switch (input) {
+                case '1':
+                    a = prompt('请输入第一个数');
+                    b = prompt('请输入第二个数');
+                    alert(ans.add(a, b));
+                    break;
+                case '2':
+                    a = prompt('请输入第一个数');
+                    b = prompt('请输入第二个数');
+                    alert(ans.minus(a, b));
+                    break;
+                case '3':
+                    a = prompt('请输入第一个数');
+                    b = prompt('请输入第二个数');
+                    alert(ans.mult(a, b));
+                    break;
+                case '4':
+                    a = prompt('请输入第一个数');
+                    b = prompt('请输入第二个数');
+                    alert(ans.div(a, b));
+                    break;
+                default:
+                    alert('请输入正确的选项！')
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        //event是一个事件对象 写在监听函数的小括号里 当形参看 event可以换成其他单词 事件对象可以自己命名 ie678:windows.event e = e || widows.event
+        //事件对象只有有了事件才会存在 是系统自动创建的，不需要往里面传参数
+        //事件对象是我们事件对象的一系列相关数据的集合 跟事件相关的 比如鼠标点击里面就包含了鼠标的相关信息如鼠标坐标，如果是键盘事件里面就包含键盘事件的信息比如判断用户按下了哪个键
+        var div = document.querySelector('div');
+        // div.onclick = function (event) {
+        //     console.log(event);
+        // }
+        div.addEventListener('click',function(event){
+            console.log(event);
+        })
+    </script>
+</body>
+
+</html>

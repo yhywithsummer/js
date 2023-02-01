@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>666</div>
+    <p> 123
+        <span>456</span>
+    </p>
+    <script>
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        console.log(p.innerText);//去除html标签 空格和换行
+        console.log(p.innerHTML);//不去除html标签 空格和换行
+        //innertext不识别html标签 非标准
+        div.innerText = '<strong>今天是初一</strong>';
+        //innerHTML识别html标签 W3C标准
+        p.innerHTML = '<strong>今天是初一</strong>';
+        //这两个属性是可读写的 可以获取元素里的内容
+    </script>
+</body>
+
+</html>

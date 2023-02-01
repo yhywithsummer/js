@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #out {
+            display: none;
+            height: 30px;
+            font-size: 18px;
+        } */
+        .box {
+            position: relative;
+            width: 178px;
+            margin: 100px;
+        }
+        .out {
+            display: none;
+            position: absolute;
+            top: -70px;
+            width: 171px;
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            padding: 5px 0;
+            font-size: 25px;
+            border: 1px solid rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        }
+        .out::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 60px;
+            left: 18px;
+            border: 8px solid #000;
+            /* border-style: solid dashed dashed; */
+            border-color: #fff transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    <input type="text" name="" id="in">
+    <!-- <input type="text" name="" id="out"> -->
+    <div class="out"></div>
+    </div>
+    
+    <script>
+        var inp = document.querySelector('#in');
+        var ou = document.querySelector('#out')
+        var o = document.querySelector('.out')
+        document.addEventListener('keyup', function (e) {
+            console.log(e.keyCode);
+            if (e.keyCode == 83) {
+                inp.focus();
+            }
+        })
+        inp.addEventListener('keyup',function(e){
+            if(this.value=='') o.style.display = 'none';
+            else o.style.display = 'block';
+            o.innerHTML = inp.value;
+        })
+        inp.addEventListener('blur',function(e){
+            o.style.display = 'none';
+        })
+        inp.addEventListener('focus',function(){
+            if(this.value!='') o.style.display = 'block';
+        })
+    </script>
+</body>
+
+</html>

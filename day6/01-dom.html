@@ -1,0 +1,64 @@
+<!-- 文档对象模型dom 是W3C组织 推荐的处理可拓展标记语言（html，xml）的标准编程接口 -->
+<!-- 一个页面就是一个文档dom中用document表示 -->
+<!-- 页面所有标签都是元素 dom中用element表示 -->
+<!-- 网页中所有内容都是节点（标签、属性、文本、注释等）dom中用node表示 -->
+<!-- dom把以上内容都看做对象 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用getElementById()方法可以获取带有ID的元素对象 -->
+    <div id="time">2023-1-22</div>
+    <script>
+        //1.因为文档页面从上往下加载，所以script写在标签下面
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);//object
+        console.dir(timer);//打印返回的元素对象 更好地查看里面的属性和方法
+    </script>
+
+    <ul>
+        <li>知否知否应是绿肥红瘦1</li>
+        <li>知否知否应是绿肥红瘦2</li>
+        <li>知否知否应是绿肥红瘦3</li>
+        <li>知否知否应是绿肥红瘦4</li>
+        <li>知否知否应是绿肥红瘦5</li>
+    </ul>
+    <ol>
+        <li>我是ol</li>
+        <li>我是ol</li>
+        <li>我是ol</li>
+    </ol>
+    <script>
+        //getElementsByTagName()方法可以返回带有指定标签名的对象集合 以伪数组的形式存储的 得到的元素是动态的 如果页面中只有一个li返回的也是伪数组 如果页面中没有这种元素，返回的是一个空的伪数组[]
+        var lis = document.getElementsByTagName('li');//包含了所有的li
+        console.log(lis);
+        console.log(lis[0]);
+        //依次打印lis的元素
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+        var ols = document.getElementsByTagName('ol');
+        //var olis = ols.getElementsByTagName('li');报错，返回的是伪数组不能直接用  必须指明是哪一个父元素，获取的时候不包括父元素自己
+        //element.getElementsByTagName()获取指定父元素的
+        var olis = ols[0].getElementsByTagName('li');
+        for (var i = 0; i < olis.length; i++) {
+            console.log(olis[i]);
+        }
+
+    </script>
+</body>
+
+</html>

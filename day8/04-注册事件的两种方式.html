@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统方法注册</button>
+    <button>方法监听注册事件</button>
+    <button>ie9 attachEvent</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function () {
+            alert('hi')
+        }
+        //只会执行下一个 传统注册方式的唯一性
+        btns[0].onclick = function () {
+            alert('hello')
+        }
+
+        //方法监听注册方式 addEventlistener() 同一个元素同一个事件可以注册多个监听器
+        // eventTarget.addEventlistener(type,listener[,useCapture])
+        //type:事件类型字符串 click mouseover 不要用on
+        //listener 事件处理函数
+        // usercapture 可选参数 一个bool值 默认false
+        btns[1].addEventListener('click', function () {
+            alert(22);
+        })
+        btns[1].addEventListener('click', function () {
+            alert(33);
+        })
+        //依次执行22 33
+
+        //eventTarget.attachEvent(eventNameWithOn,callback)
+        //eventNameWithOn 事件类型字符 onclick onmouseover 需要带on
+        //callback 事件处理函数
+        //ie9独有 不要用
+        btns[2].accachEvent('onclick',function(){
+            alert('11');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button class="add">发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        var add = document.querySelector('.add');
+        // var del = document.querySelector('.del')
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        var as = document.querySelectorAll('a');
+        // var d = document.querySelectorAll('a')
+        add.onclick = function () {
+            var newli = document.createElement('li');
+            // <a href='javascript:;'>删除</a>" javascript:; 阻止链接跳转
+            newli.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+            ul.appendChild(newli);
+            as = document.querySelectorAll('a');
+            console.log(as);
+            for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                console.log(1111);
+                // node.removeChild(child); 删除的是 li 当前a所在的li  this.parentNode;
+                ul.removeChild(this.parentNode);
+            }
+        }
+    }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js是单线程语言 同一时间做一件事 -->
+    <script>
+        // setInterval(function(){
+        //     console.log(4);
+        // },1000)
+        // console.log(1);
+        // setTimeout(function(){
+        //     console.log(2);
+        // },1000)
+        // console.log(3);
+        //1 3 2
+        // 同步 前一个任务结束后，程序的执行顺序与任务的排列顺序是一致的 同步的。
+        // 异步 在做一件事时花费时间较长 这时就可以同时做其他的事‘
+        // 本质区别 这条流水线上的各个流程执行顺序不同
+        console.log(1);
+        setTimeout(function(){
+            console.log(2);
+        },0)
+        console.log(3);
+        //1 3 2
+        /* 
+        js把任务分为同步任务和异步任务 
+        把所有同步任务放在主线程上执行 形成一个执行栈
+        js的异步是通过回调函数来实现的
+        常见异步任务有以下几类
+        1.普通事件 click resize
+        2.资源加载 load error
+        3.定时器 setInterval setTimeout
+        异步任务相关回调函数添加到任务队列（消息队列）中
+        */
+    </script>
+</body>
+</html>

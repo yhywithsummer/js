@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            margin: 30px 100px;
+            width: 160px;
+
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        label img {
+            position: absolute;
+            right: -10px;
+            top: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="">
+            <img src="wrong.png" alt="" id="close">
+        </label>
+        <img src="tao.png" alt="" id="tao">
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        var cl = document.getElementById('close');
+        var img = document.getElementById('tao');
+        cl.onclick = function () {
+            div.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1去111</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        // 浅拷贝 如果括号为空或false 只复制标签 不赋值里面的内容
+        // var nli = ul.children[0].cloneNode();
+        //深拷贝 括号里面是true 复制标签及内容
+        var nli = ul.children[0].cloneNode(true);
+        ul.appendChild(nli);
+    </script>
+</body>
+
+</html>

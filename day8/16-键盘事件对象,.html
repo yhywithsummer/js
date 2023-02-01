@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('keyup',function(e){
+            // console.log(e);
+            console.log(e.keyCode);
+            // keyup和keydown不区分字母大小写 a A 都是65
+            // keypress区分字母大小写
+            if(e.keyCode==65) alert('按下了a');
+            else alert('没有按下a');
+        })
+        document.addEventListener('keypress',function(e){
+            // console.log(e);
+            console.log(e.keyCode);
+            // keyup和keydown不区分字母大小写 a A 都是65
+            // keypress区分字母大小写 a 97 A 65
+        })
+    </script>
+</body>
+</html>

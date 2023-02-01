@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- 鼠标移动事件 mousemove -->
+    <img src="images/angel.gif" alt="">
+    <script>
+        var angle = document.querySelector('img');
+        document.addEventListener('mousemove',function(e){
+            // console.log(e.clientX);
+            angle.style.top = e.clientY - 50 + 'px';
+            // console.log(angle.style.top);
+            angle.style.left = e.clientX - 40+ 'px';
+        })
+    </script>
+</body>
+</html>

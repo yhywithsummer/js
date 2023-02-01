@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        console.log(1);
+        document.onclick = function(){
+            console.log('click');
+        }
+        console.log(2);
+        setTimeout(function(){
+            console.log(3);
+        },1000)
+        /* 
+            异步进程处理程序 会将onclick在鼠标点击后再写到任务队列中
+
+            事件循环 event loop 主线程不断地重复获得任务 执行任务
+        */
+    </script>
+</body>
+</html>

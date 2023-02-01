@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cal(num1, num2) {
+            var sum = 0;
+            for (var i = num1; i < num2; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        cal(1, 100);
+        cal(100, 190);
+
+        //函数实参形参不匹配
+        function getsum(num1, num2) {
+            console.log(num1 + num2);
+        }
+        //如果个数一致，则正常输出结果
+        getsum(1, 2);
+        //如果实参多余形参 会取到实参个数
+        getsum(1, 2, 3);
+        //如果实参个数小于形参 最终结果是NaN
+        //形参可以看做是不用声明的变量 num2是一个变量但没有赋值 所以是undefined
+        getsum(1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
