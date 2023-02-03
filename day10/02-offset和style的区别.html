@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width: 200px;"></div>
+    <script>
+        var box = document.querySelector('.box');
+        console.log(box.offsetWidth);//220
+        console.log(box.style.width);//200px 只能得到行内样式表中的样式值
+        // offset获得的值没有单位 style有
+        // offsetwidth包括 width+padding+border style.width只有width
+        // offsetWidth不能赋值 style.width可以
+        // 获取元素位置用offset 给元素改值用style
+    </script>
+</body>
+
+</html>

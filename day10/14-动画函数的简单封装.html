@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击夏雨荷走</button>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        // var obj = {};
+        var div = document.querySelector('div');
+        // obj是对象 可以直接通过给对象赋值的方式选择不同的计时器
+        function animate(obj, target, n) {
+            // 速度越来越快解决方法
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) clearInterval(timer);
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, n)
+        }
+        var btn = document.querySelector('button');
+        animate(div, 400, 20);
+        var span = document.querySelector('span');
+        // animate(span, 200, 40);
+        // 当我们不断点击按钮 这个元素的速度会越来越快 因为开启太多定时器
+        btn.addEventListener('click', function () {
+            animate(span, 200, 40);
+        })
+
+    </script>
+</body>
+
+</html>

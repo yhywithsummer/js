@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+            background-color: #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .box {
+            /* display: none; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 350px;
+            width: 500px;
+            background-color: #fff;
+            cursor: move;
+            box-shadow: 0px 0px 20px 0px #fff;
+            transform: translate(-250px,-175px);
+            /* transition: all 1s; */
+        }
+
+        .box h4 {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-weight: normal;
+            font-size: 24px;
+        }
+
+        .box span {
+            
+            margin: 0 10px;
+        }
+
+        .box input {
+            width: 300px;
+            height: 30px;
+        }
+        .w {
+            margin: 20px auto;
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            transform: translate(-15px, -15px);
+            cursor: pointer;
+        }
+        button {
+            position: absolute;
+            left: 50%;
+            top: 250px;
+            margin-left: -100px;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            background-color: transparent;
+            border: 1px solid black;
+        }
+        .t {
+            height: 100px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>点击，弹出登录框</h2>
+    <div class="box">
+        <h4>登录会员</h4>
+        <div class="user w">
+            <span>用户名 :</span>
+            <input type="text" name="" id="" placeholder="请输入用户名">
+        </div>
+        <div class="password w">
+            <span>登录密码 :</span>
+            <input type="text">
+        </div>
+        <button>登录会员</button>
+        <div class="close">
+            关闭
+        </div>
+    </div>
+    <!-- <div class="t"></div> -->
+    <script>
+        var h2 = document.querySelector('h2');
+        var h3 = document.querySelector('h3');
+
+        var box = document.querySelector('.box');
+        var close = document.querySelector('.close');
+        var x,y;
+        h2.addEventListener('click',function(){
+            document.body.style.backgroundColor = "#ccc";
+            box.style.display = 'block';
+        })
+        close.addEventListener('click',function(){
+            box.style.display = 'none';
+        })
+        box.addEventListener('mousedown',function(e){
+            x = e.pageX - this.offsetLeft + 250;
+            y = e.pageY - this.offsetTop + 175;
+            // this.style.top = this.offsetTop;
+            // this.style.top = this.offsetLeft;
+            // console.log(e.pageX,this.offsetLeft,e.pageY,this.offsetTop);
+            // console.log(this.offsetLeft);
+            // console.log(this.offsetTop);
+            // console.log(this.style.top);
+            // console.log(this.style.left);
+            // console.log(x,y);
+        })
+        box.addEventListener('mouseover',function(e){
+            // x = e.pageX - this.offsetLeft;
+            // y = e.pageY - this.offsetTop;
+            box.style.top = e.pageX - x + 'px';
+            box.style.left = e.pageY - y + 'px';
+            console.log(e.pageX - x,e.pageY - y);
+        })
+        
+    </script>
+</body>
+
+</html>

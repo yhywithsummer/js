@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            background-color: pink;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <!-- scroll 滚动的
+    scrollTop 返回被卷去的上侧距离
+    scrollLeft 返回被卷去的左侧距离
+    scrollWidth 返回自身的实际宽度 不含边框 含padding
+    scrollHeight 返回自身的实际高度 不含边框 -->
+    <div>我是内容 我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight);//400
+        //  var timer = setInterval(function(){
+        //     console.log(div.scrollTop);
+        // },1000)
+        // div.addEventListener('click',function(){
+        //     clearInterval(timer);
+        // })
+        // scroll 滚动事件
+        div.addEventListener('scroll',function(){
+            console.log(parseInt(div.scrollTop));
+        })
+    </script>
+</body>
+</html>
