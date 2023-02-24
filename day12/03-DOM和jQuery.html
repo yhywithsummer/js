@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div0 = document.querySelector('div');
+        console.dir(div0);
+        $('div');
+        console.log($('div'));
+        // jQuery对象的本质是 利用$对DOM对象包装后产生的对象(伪数组形式存储)
+        // jQuery对象只能使用jQuery方法，DOM对象只能使用js方法
+        // 互相转换
+        $(div0);//DOM->jQuery  $(DOM)
+        $('div')[0];//jQuery->DOM $()[index]或者$().get(index)
+        
+    </script>
+</body>
+
+</html>

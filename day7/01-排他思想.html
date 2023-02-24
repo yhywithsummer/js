@@ -17,12 +17,15 @@
     <script>
         var btns = document.getElementsByTagName('button');
         for (var i = 0; i < btns.length; i++) {
+            console.log(i);
             btns[i].onclick = function () {
                 //先把所有按钮背景颜色去掉
                 for (var j = 0; j < btns.length; j++) {
                     btns[j].style.backgroundColor = '';
+                    console.log(j);
                 }
                 this.style.backgroundColor = 'pink';
+                console.log(i);//5
             }
         }
     </script>

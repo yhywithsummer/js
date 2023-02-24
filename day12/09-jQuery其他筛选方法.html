@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ul>
+    <div class="current">俺有current</div>
+    <div>俺木有current</div>
+    <script>
+        $(function () {
+            // 兄弟元素 siblings 除了自身元素之外的所有亲兄弟 nextAll后面的所有元素 prevAll 后面的所有元素
+            $("ol .item").siblings("li").css("color", "red");
+            // 第n个元素
+            $("ul li:eq(2)").css('color','blue');//选择器方式
+            $('ul li').eq(3).css('color','blue');//方法方式 更推荐
+            // 判断是否有某个类名 hasClass
+            console.log($('div:first').hasClass('current'));//true
+            console.log($('div:last').hasClass('current'));//false
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all 0.5s;
+        }
+        .current {
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        $(function () {
+            console.log($('div').css('width'));//200px
+            // $('div').css('width','300px')
+            // $('div').css('width',300)//300可以不用加引号 属性名必须加引号
+            // 传对象进去的话，属性名可以不用加引号，数字也不用加引号
+            // $('div').css({
+            //     width: 400,
+            //     height: '400px',
+            //     backgroundColor: 'red'
+            // })
+
+            // addClass添加类 removeClass移除类 toggleClass切换类 类名不要加.
+            $('div').click(function(){
+                // $(this).addClass('current');
+                // $(this).removeClass('current');
+                $(this).toggleClass('current');
+            })
+        })
+    </script>
+</body>
+
+</html>

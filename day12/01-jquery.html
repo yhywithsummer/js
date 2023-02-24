@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- js库 library，是一个峰组昂好的特定集合（方法和函数）。从封装一大堆函数的角度理解库，就是在这个库中，封装好了很多预定好的函数在里面，比如动画animate、hide、show，比如获取元素等
+    jquery就是为了方便操作DOM -->
+    <script>
+        // $('div').hide();
+        // 等着页面DOM加载完毕再执行js
+        // $(document).ready(function(){
+        //     $('div').hide();
+        // })
+        // second
+        // 等待DOM结构渲染完毕即可执行内部底阿妈，不必等到所有外部资源加载完成
+        $(function(){
+            $('div').hide();
+        })
+    </script>
+    <div></div>
+</body>
+
+</html>

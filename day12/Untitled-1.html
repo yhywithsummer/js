@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+
+        div:hover {
+            cursor: grab;
+            /* cursor: grabbing; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <noscript>
+        <p>
+            需要支持js的浏览器！
+        </p>
+    </noscript>
+    <script>
+        var div = document.querySelector('div');
+        div.addEventListener('mousedown', function () {
+            this.style.cursor = 'grabbing';
+        })
+        div.addEventListener('mouseup', function () {
+            this.style.cursor = 'grab';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 都是方法，需要加括号 -->
+    <div class="yeye">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            // 父 parent()
+            console.log($('.son').parent()); //father 泛灰的是最近一级的父级元素
+            // 子 children() find()
+            $('.nav').children('p').css('color','pink');//我是屁 子代选择器
+            $('.nav').find('p').css('color','red');//我是屁 我是p 后代选择器
+
+        })
+    </script>
+</body>
+
+</html>
